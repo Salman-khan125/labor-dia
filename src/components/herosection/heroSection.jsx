@@ -50,35 +50,61 @@ const HeroSection = () => {
             </Typography>
 
             {/* Store Buttons */}
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                mt: 4,
-                 flexDirection: { xs: "column", md: "row" }, // stack on small screens
-                alignItems: { xs: "flex-start", md: "center" }, // keep left aligned on mobile to match your design margins
-                ml: { xs: "30px", md: "70px" },// keep your md left offset, none on xs
-               
-              }}
-            >
-              <Box
-                component="img"
-                src="/assets/hero/google.png"
-                alt="Google Play"
-                sx={{
-                  height: 60,
-                  width: "auto",
-                  cursor: "pointer",
-                 
-                }}
-              />
-              <Box
-                component="img"
-                src="/assets/hero/app.png"
-                alt="App Store"
-                sx={{ height: 60, width: "auto", cursor: "pointer" }}
-              />
-            </Box>
+           <Box
+  sx={{
+    display: "flex",
+    gap: 2,
+    mt: 4,
+    flexDirection: { xs: "column", md: "row" },
+    alignItems: { xs: "flex-start", md: "center" },
+    ml: { xs: "30px", md: "70px" },
+  }}
+>
+  {/* Google Play Button */}
+  <Box
+    component="img"
+    src="/assets/hero/google.png"
+    alt="Google Play"
+    sx={{
+      height: 60,
+      width: "auto",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+
+      "&:hover": {
+        transform: "translateY(-5px)",
+        filter: "brightness(1.1)",  // slight highlight
+      },
+
+      "&:active": {
+        transform: "translateY(-2px)",
+      },
+    }}
+  />
+
+  {/* App Store Button */}
+  <Box
+    component="img"
+    src="/assets/hero/app.png"
+    alt="App Store"
+    sx={{
+      height: 60,
+      width: "auto",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+
+      "&:hover": {
+        transform: "translateY(-5px)",
+        filter: "brightness(1.1)",
+      },
+
+      "&:active": {
+        transform: "translateY(-2px)",
+      },
+    }}
+  />
+</Box>
+
 
             {/* QR CODES */}
             <Box

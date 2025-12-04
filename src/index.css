@@ -63,3 +63,8 @@ input:focus, textarea:focus {
   background-size: 700px; /* Adjust to match the figma */
   width: 100%;
 }
+@media (max-width: 600px) {
+  .bg-wrapper {
+    background-image: none;
+  }
+}
