@@ -37,7 +37,7 @@ const Services = () => {
         container
         spacing={0}
         alignItems="center"
-        justifyContent="center"
+      
         justifyContent="space-between"
       >
         {/* LEFT SIDE — Phone Image */}
