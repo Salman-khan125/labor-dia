@@ -5,6 +5,8 @@ import Services from "./components/services/Services";
 import WeOffer from "./components/weoffer/WeOffer";
 import Image from "./components/image/Image";
 import Payments from "./components/payments/Payments";
+import InfoVideo from "./components/infovideo/InfoVideo";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
        <WeOffer/>
        <Image/>
        <Payments/>
+       <InfoVideo/>
+       <Footer/>
       
     </div>
   );
