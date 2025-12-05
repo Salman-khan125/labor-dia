@@ -38,9 +38,9 @@ const Payments = () => {
             src="/assets/payments/phone1.png"
             alt="Payment Status Screen"
             sx={{
-              width: { xs: 180, md: 260 },
+              width: { xs: 210, md: 260 },
               position: "absolute",
-              left: { xs: "30%", md: "50%", sm: "0%", lg: "70%" },
+              left: { xs: "15%", md: "50%", sm: "0%", lg: "50%" },
               bottom: { xs: "-110%", md: "20%" },
               zIndex: 1,
             }}
@@ -52,8 +52,8 @@ const Payments = () => {
             src="/assets/payments/phone2.png"
             alt="Payment Status Screen"
             sx={{
-              width: { xs: 180, md: 260 },
-              left: { xs: "30%", sm: "30%", md: "80%", lg: "160%" },
+              width: { xs: 210, md: 260 },
+              left: { xs: "15%", sm: "30%", md: "80%", lg: "150%" },
               bottom: { xs: "10%", sm: "15%", md: "30%" },
               position: "relative",
               zIndex: 2,
@@ -66,7 +66,7 @@ const Payments = () => {
           item
           xs={12}
           md={6}
-          sx={{ mb: { md: 33 }, mr: { sm: 5, md: 0, lg: 16 } }}
+          sx={{ mt: { xs:8,md: 33 }, mr: { sm: 5, md: 0, lg: 1 } }}
         >
           {/* TITLE */}
           <Typography
@@ -75,7 +75,8 @@ const Payments = () => {
               fontWeight: 700,
               mb: 2,
               textAlign: { xs: "center", md: "left" },
-              mt:{xs:50}
+              mt:{xs:50, lg:10},
+             
             }}
           >
             Payments & Ratings
@@ -90,11 +91,12 @@ const Payments = () => {
               mb: 4,
               textAlign: { xs: "center", md: "left" },
               mx: { xs: "auto", md: 0 },
+            
             }}
           >
             Watch this video to find out more about how the Labor dia can help
             mobile food vendors increase sales, while saving contractors time
-            and money.
+            and money. 
           </Typography>
 
           {/* STARS + HAND IMAGE */}

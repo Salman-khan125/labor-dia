@@ -126,7 +126,7 @@ const Navbar = () => {
     maxWidth: 150,
 
     // move logo left only on small screens
-    ml: { xs: 4, sm: 6, md: 10 },
+    ml: { xs: 0, sm: 6, md: 10 },
 
     display: "block",
   }}

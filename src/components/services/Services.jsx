@@ -52,7 +52,7 @@ const Services = () => {
             src="assets/services/phone.png"
             alt="Phone"
             sx={{
-              width: { xs: "50%", sm: "55%", md: "70%" },
+              width: { xs: "70%", sm: "55%", md: "70%" },
               maxWidth: "420px",
             }}
           />

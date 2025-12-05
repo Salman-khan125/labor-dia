@@ -32,7 +32,7 @@ const HeroSection = () => {
                 lineHeight: 1.2,
                 fontSize: { xs: "2rem", sm: "2.6rem", md: "3.4rem" },
                 maxWidth: "600px",
-                ml: { xs: "30px", md: "70px" },
+                ml: { xs: "1px", md: "70px" },
               }}
             >
               Download Labor Dia, Invite friends and earn discounts
@@ -40,7 +40,7 @@ const HeroSection = () => {
 
             <Typography
               sx={{
-                ml: { xs: "30px", md: "70px" },
+                ml: { xs: "1px", md: "70px" },
 
                 mt: 2,
                 color: theme.palette.text.secondary,
@@ -148,7 +148,7 @@ const HeroSection = () => {
               display: "flex",
               justifyContent: { xs: "center", md: "flex-end" },
               alignItems: "center",
-              mt: { xs: 4, md: 0 },
+              mt: { xs: -4, md: 0 },
               right: 50,
 
               // ⭐ Move phone more to the right
@@ -160,12 +160,12 @@ const HeroSection = () => {
               src="/assets/hero/phone.png"
               alt="Phone Mockup"
               sx={{
-                width: { xs: "70%", sm: "65%", md: "70%" },
+                width: { xs: "100%", sm: "65%", md: "70%" },
                 maxWidth: "500px",
                 height: "auto",
                 userSelect: "none",
                 py: { xs: -50, md: 0 },
-                ml: { xs: 8 },
+                ml: { xs: 8, lg: 2 },
               }}
             />
           </Grid>
