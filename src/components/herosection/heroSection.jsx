@@ -17,7 +17,12 @@ const HeroSection = () => {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={10} alignItems="center" justifyContent="space-between">
+        <Grid
+          container
+          spacing={10}
+          alignItems="center"
+          justifyContent="space-between"
+        >
           {/* LEFT SIDE — TEXT + BUTTONS + QR CODES */}
           <Grid item xs={12} md={6}>
             <Typography
@@ -28,7 +33,6 @@ const HeroSection = () => {
                 fontSize: { xs: "2rem", sm: "2.6rem", md: "3.4rem" },
                 maxWidth: "600px",
                 ml: { xs: "30px", md: "70px" },
-
               }}
             >
               Download Labor Dia, Invite friends and earn discounts
@@ -36,7 +40,7 @@ const HeroSection = () => {
 
             <Typography
               sx={{
-               ml: { xs: "30px", md: "70px" },
+                ml: { xs: "30px", md: "70px" },
 
                 mt: 2,
                 color: theme.palette.text.secondary,
@@ -50,61 +54,60 @@ const HeroSection = () => {
             </Typography>
 
             {/* Store Buttons */}
-           <Box
-  sx={{
-    display: "flex",
-    gap: 2,
-    mt: 4,
-    flexDirection: { xs: "column", md: "row" },
-    alignItems: { xs: "flex-start", md: "center" },
-    ml: { xs: "30px", md: "70px" },
-  }}
->
-  {/* Google Play Button */}
-  <Box
-    component="img"
-    src="/assets/hero/google.png"
-    alt="Google Play"
-    sx={{
-      height: 60,
-      width: "auto",
-      cursor: "pointer",
-      transition: "all 0.3s ease",
+            <Box
+              sx={{
+                display: "flex",
+                gap: 2,
+                mt: 4,
+                flexDirection: { xs: "column", md: "row" },
+                alignItems: { xs: "flex-start", md: "center" },
+                ml: { xs: "30px", md: "70px" },
+              }}
+            >
+              {/* Google Play Button */}
+              <Box
+                component="img"
+                src="/assets/hero/google.png"
+                alt="Google Play"
+                sx={{
+                  height: 60,
+                  width: "auto",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
 
-      "&:hover": {
-        transform: "translateY(-5px)",
-        filter: "brightness(1.1)",  // slight highlight
-      },
+                  "&:hover": {
+                    transform: "translateY(-5px)",
+                    filter: "brightness(1.1)", // slight highlight
+                  },
 
-      "&:active": {
-        transform: "translateY(-2px)",
-      },
-    }}
-  />
+                  "&:active": {
+                    transform: "translateY(-2px)",
+                  },
+                }}
+              />
 
-  {/* App Store Button */}
-  <Box
-    component="img"
-    src="/assets/hero/app.png"
-    alt="App Store"
-    sx={{
-      height: 60,
-      width: "auto",
-      cursor: "pointer",
-      transition: "all 0.3s ease",
+              {/* App Store Button */}
+              <Box
+                component="img"
+                src="/assets/hero/app.png"
+                alt="App Store"
+                sx={{
+                  height: 60,
+                  width: "auto",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
 
-      "&:hover": {
-        transform: "translateY(-5px)",
-        filter: "brightness(1.1)",
-      },
+                  "&:hover": {
+                    transform: "translateY(-5px)",
+                    filter: "brightness(1.1)",
+                  },
 
-      "&:active": {
-        transform: "translateY(-2px)",
-      },
-    }}
-  />
-</Box>
-
+                  "&:active": {
+                    transform: "translateY(-2px)",
+                  },
+                }}
+              />
+            </Box>
 
             {/* QR CODES */}
             <Box
@@ -115,8 +118,6 @@ const HeroSection = () => {
                 flexDirection: { xs: "row", md: "row" }, // stack on small screens
                 alignItems: { xs: "flex-start", md: "center" },
                 ml: { xs: "30px", md: "110px" },
-
-                
               }}
             >
               <Box
@@ -132,8 +133,7 @@ const HeroSection = () => {
                 sx={{
                   height: 90,
                   width: 90,
-                  ml: {xs:"-20px" ,md:"100px"},
-               
+                  ml: { xs: "-20px", md: "100px" },
                 }}
               />
             </Box>
@@ -160,15 +160,12 @@ const HeroSection = () => {
               src="/assets/hero/phone.png"
               alt="Phone Mockup"
               sx={{
-                width: { xs: "70%", sm: "65%", md: "70%"},
+                width: { xs: "70%", sm: "65%", md: "70%" },
                 maxWidth: "500px",
                 height: "auto",
                 userSelect: "none",
-                py:{xs:-50, md:0},
-                ml:{xs:8}
-               
-
-             
+                py: { xs: -50, md: 0 },
+                ml: { xs: 8 },
               }}
             />
           </Grid>

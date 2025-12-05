@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/navbar/Navbar"; 
-import HeroSection from "./components/herosection/HeroSection";
+import HeroSection from "./components/herosection/heroSection";
 import Services from "./components/services/Services";
 import WeOffer from "./components/weoffer/WeOffer";
 import Image from "./components/image/Image";
