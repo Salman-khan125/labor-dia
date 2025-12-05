@@ -66,16 +66,18 @@ const Payments = () => {
           item
           xs={12}
           md={6}
-          sx={{ mt: { xs:8,md: 33 }, mr: { sm: 5, md: 0, lg: 1 } }}
+          sx={{ mt: { xs:8,md: 33 }, mr: { sm: 5, md: 0, lg: 10 } }}
         >
           {/* TITLE */}
           <Typography
             variant="h4"
             sx={{
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" },
               fontWeight: 700,
+             
               mb: 2,
               textAlign: { xs: "center", md: "left" },
-              mt:{xs:50, lg:10},
+              mt:{xs:50 ,lg:-50}
              
             }}
           >
