@@ -10,141 +10,162 @@ import {
   Drawer,
   List,
   ListItem,
-  ListItemText,
   useTheme,
-  useMediaQuery,
-  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom"; // ✅ ADD THIS IMPORT
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const navItems = ["Home", "About us", "Services", "Referrals"];
+  // ✅ Update navItems to include route paths
+  const navItems = [
+    { label: "Home", path: "/" },
+    { label: "About us", path: "/aboutus" },
+    { label: "Services", path: "/service" },
+    { label: "Referrals", path: "/referrals" }
+  ];
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+  const handleItemClick = () => setMobileOpen(false);
 
   const drawer = (
-    <Box sx={{ width: 250, p: 2 }}>
-     <Box
-  sx={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    mb: 3,
-  }}
->
-  {/* Logo — uses Box so sx breakpoints work */}
-  <Box
-    component="img"
-    src="assets/navbar/logo.png"
-    alt="Logo"
-    sx={{
-      width: "auto",
-      height: 40,
-      // move logo slightly to the left only on xs
-      ml: { xs: "10px", sm: "24px", md: 0 },
-      // ensure it doesn't overflow inside the drawer
-      maxWidth: { xs: "70%", md: "100%" },
-      display: "block",
-    }}
-  />
+    <Box
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        p: 2,
+      }}
+    >
+      {/* Top header with logo + close button */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 3,
+        }}
+      >
+        <Box
+          component={Link} // ✅ Change to Link
+          to="/" // ✅ Add to="/"
+          onClick={handleItemClick}
+        >
+          <Box
+            component="img"
+            src="assets/navbar/logo.png"
+            alt="Logo"
+            sx={{ height: 40 }}
+          />
+        </Box>
 
-  <IconButton onClick={handleDrawerToggle}>
-    <CloseIcon />
-  </IconButton>
-</Box>
+        <IconButton onClick={handleDrawerToggle}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
 
-      <List>
+      {/* Navigation links */}
+      <List sx={{ flexGrow: 1 }}>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding sx={{ mb: 1 }}>
+          <ListItem
+            key={item.label}
+            disablePadding
+            onClick={handleItemClick}
+          >
             <Button
+              component={Link} // ✅ Add this
+              to={item.path} // ✅ Add this
               fullWidth
               sx={{
-                textAlign: "left",
                 justifyContent: "flex-start",
                 color: theme.palette.text.primary,
                 fontSize: "1.1rem",
                 py: 1.5,
+                textTransform: "none",
                 "&:hover": {
                   backgroundColor: theme.palette.primary.dark,
                 },
               }}
             >
-              {item}
+              {item.label}
             </Button>
           </ListItem>
         ))}
-        <ListItem disablePadding sx={{ mt: 2 }}>
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{
-              backgroundColor: theme.palette.secondary.main,
-              color: theme.palette.primary.main,
-              py: 5,
-              fontSize: "1.1rem",
-              "&:hover": {
-                backgroundColor: theme.palette.secondary.dark,
-              },
-            }}
-          >
-            Contact
-          </Button>
-        </ListItem>
       </List>
+
+      {/* Contact Button — STICKY BOTTOM */}
+      <Box sx={{ pb: 2 }}>
+        <Button
+          component={Link} // ✅ Add this
+          to="/contact" // ✅ Add this
+          fullWidth
+          variant="contained"
+          onClick={handleItemClick}
+          sx={{
+            backgroundColor: theme.palette.secondary.main,
+            color: theme.palette.primary.main,
+            py: 1.3,
+            fontSize: "1.1rem",
+            textTransform: "none",
+            "&:hover": {
+              backgroundColor: theme.palette.secondary.dark,
+            },
+          }}
+        >
+          Contact
+        </Button>
+      </Box>
     </Box>
   );
 
   return (
     <>
+      {/* TOP NAV */}
       <AppBar
         position="static"
         elevation={0}
         sx={{
           backgroundColor: "transparent",
-          color: theme.palette.text.primary,
-          boxShadow: "none",
+          color: theme.palette.secondary.main,
           py: 2,
         }}
       >
         <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-            {/* Logo - Left aligned */}
-           <Box
-  component="img"
-  src="assets/navbar/logo.png"
-  alt="Labor Dia Logo"
-  sx={{
-    height: 50,
-    width: "auto",
-    maxWidth: 150,
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            {/* Logo */}
+            <Box
+              component={Link} // ✅ Change to Link
+              to="/" // ✅ Add to="/"
+            >
+              <Box
+                component="img"
+                src="assets/navbar/logo.png"
+                alt="Labor Dia Logo"
+                sx={{
+                  height: 50,
+                  width: "auto",
+                  display: "block",
+                  ml: { xs: 0, sm: 4, md: 7 },
+                }}
+              />
+            </Box>
 
-    // move logo left only on small screens
-    ml: { xs: 0, sm: 6, md: 10 },
-
-    display: "block",
-  }}
-/>
-
-            {/* Navigation Links - Center aligned */}
+            {/* Desktop nav links */}
             <Box
               sx={{
-                flex: 2,
                 display: { xs: "none", md: "flex" },
-                justifyContent: "right",
                 gap: 2,
-                ml: 50,
+                ml: 70,
               }}
             >
               {navItems.map((item) => (
                 <Button
-                  key={item}
+                  key={item.label}
+                  component={Link} // ✅ Add this
+                  to={item.path} // ✅ Add this
                   sx={{
                     color: theme.palette.text.primary,
                     textTransform: "none",
@@ -168,63 +189,44 @@ const Navbar = () => {
                       backgroundColor: theme.palette.secondary.main,
                       transition: "width 0.3s ease",
                     },
-                    "&.active::after": {
-                      width: "100%",
-                    },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Button>
               ))}
             </Box>
 
-            {/* Contact Button - Right aligned */}
-            <Box
+            {/* Desktop contact */}
+            <Button
+              component={Link} // ✅ Add this
+              to="/contact" // ✅ Add this
+              variant="contained"
               sx={{
-                flex: 1,
-                display: "flex",
-                justifyContent: "flex-end",
-                alignItems: "center",
+                display: { xs: "none", md: "block" },
+                backgroundColor: theme.palette.secondary.main,
+                color: theme.palette.primary.main,
+                textTransform: "none",
+                px: 4,
+                py: 1,
+                fontWeight: 600,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: theme.palette.secondary.dark,
+                  transform: "translateY(-2px)",
+                  boxShadow: theme.shadows[4],
+                },
               }}
             >
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: theme.palette.secondary.main,
-                  color: theme.palette.primary.main,
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  fontWeight: 600,
-                  px: 4,
-                  py: 1,
-                  borderRadius: theme.shape.borderRadius,
-                  display: { xs: "none", md: "block" },
-                  "&:hover": {
-                    backgroundColor: theme.palette.secondary.dark,
-                    transform: "translateY(-2px)",
-                    boxShadow: theme.shadows[4],
-                  },
-                  transition: "all 0.3s ease",
-                }}
-              >
-                Contact
-              </Button>
+              Contact
+            </Button>
 
-              {/* Mobile menu button */}
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="end"
-                onClick={handleDrawerToggle}
-                sx={{
-                  display: { md: "none" },
-                  color: theme.palette.secondary.main,
-                  ml: 2,
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-            </Box>
+            {/* Mobile menu button */}
+            <IconButton
+              sx={{ display: { md: "none" }, color: theme.palette.secondary.main }}
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </Container>
       </AppBar>
@@ -239,8 +241,6 @@ const Navbar = () => {
           "& .MuiDrawer-paper": {
             width: 280,
             backgroundColor: theme.palette.primary.main,
-            borderTopLeftRadius: 20,
-            borderBottomLeftRadius: 20,
           },
         }}
       >
