@@ -24,6 +24,15 @@ const theme = createTheme({
       secondary: "#444444",
       
     },
+    components: {
+  MuiSvgIcon: {
+    styleOverrides: {
+      root: {
+        color: "#782F40",
+      },
+    },
+  },
+}
   },
 
   typography: {

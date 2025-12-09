@@ -14,41 +14,39 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import PaidIcon from "@mui/icons-material/Paid";
-import Premium   from "./premium/Premium";
 
-const pricingData = [
+const premiumData = [
   {
     title: "Food Trucks",
     icon: <EmojiTransportationIcon sx={{ fontSize: 36, color: "#fff" }} />,
     description:
-      "Food trucks need real-time alerts for job sites and high-traffic locations.",
+      "Stay ahead of the crowd and hit the best locations with real-time alerts and analytics.",
     tiers: [
       {
         tier: "Free",
         price: "$0",
-        features:
-          "View nearby job site locations & estimated foot traffic. No priority alerts.",
+        features: "View nearby job sites & estimated foot traffic.",
         icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$10/month",
         price: "$10",
         features:
-          "Receive up to 5 push notifications/day for high-traffic sites. Can post 1 signature dish to order-by-click.",
+          "Up to 5 push notifications/day for high-traffic sites. Can post 1 menu item.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$20/month",
         price: "$20",
         features:
-          "Receive 15 push notifications/day, priority placement in the app’s search listings. Can post 5 menu items for pre-ordering.",
+          "15 notifications/day, priority placement in listings. Can post 5 menu items.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$50/month",
         price: "$50",
         features:
-          "Unlimited alerts, top placement in listings, analytics on high-traffic locations. Can post entire menu for pre-ordering.",
+          "Unlimited alerts, top placement, analytics on popular locations. Can post entire menu.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
     ],
@@ -57,27 +55,25 @@ const pricingData = [
     title: "Contractors",
     icon: <EngineeringIcon sx={{ fontSize: 36, color: "#fff" }} />,
     description:
-      "Contractors need to post sites and notify laborers or food trucks quickly.",
+      "Post sites, reach laborers and food trucks quickly with powerful tools and analytics.",
     tiers: [
       {
         tier: "Free",
         price: "$0",
-        features:
-          "View registered laborers and food trucks. Post 1 site/month, no direct contact.",
+        features: "View registered users, post 1 site/month, no direct contact.",
         icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$10/month",
         price: "$10",
         features:
-          "Post 2 sites/day, contact laborers/food trucks via in-app text/call.",
+          "Post 2 sites/day, contact laborers/trucks via in-app text/call.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$20/month",
         price: "$20",
-        features:
-          "Post 5 sites/day, priority notifications to laborers/trucks.",
+        features: "Post 5 sites/day, priority notifications.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
@@ -90,8 +86,7 @@ const pricingData = [
       {
         tier: "$50/month",
         price: "$50",
-        features:
-          "Unlimited postings, full access to all features & analytics.",
+        features: "Unlimited postings, full access to all features.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
     ],
@@ -100,49 +95,41 @@ const pricingData = [
     title: "Civilians / Foodies",
     icon: <FastfoodIcon sx={{ fontSize: 36, color: "#fff" }} />,
     description:
-      "Civilians may want to track food trucks or job sites for events, street fairs, or deliveries.",
+      "Track trucks and events, never miss your favorite stops or local food festivals.",
     tiers: [
       {
         tier: "Free",
         price: "$0",
-        features:
-          "View nearby trucks/sites, basic notifications (1/day). No food ordering (pre-orders).",
+        features: "View nearby trucks/sites, 1 notification/day.",
         icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$5/month",
         price: "$5",
-        features:
-          "Receive 5 notifications/day, basic route info. Can order 1 meal per week.",
+        features: "5 notifications/day, basic route info.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$10/month",
         price: "$10",
         features:
-          "15 notifications/day, route suggestions, ability to favorite trucks/sites. Can order 1 meal per day.",
+          "15 notifications/day, favorite trucks/sites, route suggestions.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
       {
         tier: "$20/month",
         price: "$20",
         features:
-          "Unlimited notifications, detailed analytics on routes & popular trucks/sites. Unlimited food ordering & catering from trucks.",
+          "Unlimited notifications, detailed analytics on routes & popular spots.",
         icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
       },
     ],
   },
 ];
 
-const Referrals = () => {
+const Premium = () => {
   return (
-    <Box
-      sx={{
-        background: "#fff",
-        py: { xs: 8, md: 12 },
-        mt: { xs: 8, md: 12 },
-      }}
-    >
+    <Box sx={{ py: { xs: 8, md: 12 }, mt: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
         <Typography
           variant="h4"
@@ -150,7 +137,15 @@ const Referrals = () => {
           align="center"
           sx={{ mb: 6, color: "secondary.main" }}
         >
-          Pricing & Referral Plans
+          Job Site Route Premium Memberships
+        </Typography>
+
+        <Typography
+          variant="subtitle1"
+          align="center"
+          sx={{ mb: 6, color: "text.secondary" }}
+        >
+          Track. Post. Discover. Your Routes, Your Way.
         </Typography>
 
         <Grid
@@ -160,7 +155,7 @@ const Referrals = () => {
           alignItems="stretch"
           sx={{ mt: 5 }}
         >
-          {pricingData.map((category, index) => (
+          {premiumData.map((category, index) => (
             <Grid
               item
               key={index}
@@ -250,98 +245,109 @@ const Referrals = () => {
           ))}
         </Grid>
 
-        {/* Referral Program & Key Notes Section */}
-        <Grid
-          container
-          spacing={3}
-          justifyContent="center"
-          alignItems="stretch"
-          sx={{ mt: 8 }}
+           {/* Premium Referral Program & Why Go Premium Section */}
+<Grid
+  container
+  spacing={3}
+  justifyContent="center"
+  alignItems="stretch"
+  sx={{ mt: 8 }}
+>
+  {/* Referral Program Card */}
+  <Grid item xs={12} md={6} display="flex" justifyContent="center">
+    <Card
+      sx={{
+        width: "100%",
+        maxWidth: 500,
+        borderRadius: 3,
+        boxShadow: 4,
+        p: 3,
+        backgroundColor: "secondary.main",
+      }}
+    >
+      <CardContent>
+        <Typography
+          variant="h6"
+          fontWeight={700}
+          sx={{ color: "#fff" }}
+          gutterBottom
         >
-          {/* Referral Program Card */}
-          <Grid item xs={12} md={6} display="flex" justifyContent="center">
-            <Card
-              sx={{
-                width: "100%",
-                maxWidth: 500,
-                borderRadius: 3,
-                boxShadow: 4,
-                p: 3,
-                backgroundColor: "secondary.main",
-              }}
-            >
-              <CardContent>
-                <Typography
-                  variant="h6"
-                  fontWeight={700}
-                  sx={{ color: "#fff" }}
-                  gutterBottom
-                >
-                  Referral Program (Optional but Recommended)
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
-                  • Each referral = <strong>10% off monthly membership</strong>
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
-                  • 10 active referrals = <strong>FREE membership</strong>
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff" }}>
-                  • Works across all user types: Food trucks, contractors, and
-                  civilians.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+          Referral Program (All Users)
+        </Typography>
+        <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
+          • Each referral = <strong>10% OFF</strong> monthly membership.
+        </Typography>
+        <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
+          • 10 active referrals = <strong>FREE membership forever! 🎉</strong>
+        </Typography>
+      </CardContent>
+    </Card>
+  </Grid>
 
-          {/* Key Notes Card */}
-          <Grid item xs={12} md={6} display="flex" justifyContent="center">
-            <Card
-              sx={{
-                width: "100%",
-                maxWidth: 500,
-                borderRadius: 3,
-                boxShadow: 4,
-                p: 3,
-                backgroundColor: "secondary.main",
-              }}
-            >
-              <CardContent>
-                <Typography
-                  variant="h6"
-                  fontWeight={700}
-                  sx={{ color: "#fff" }}
-                  gutterBottom
-                >
-                  Key Notes
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
-                  • Keeps the platform accessible with{" "}
-                  <strong>cheap entry-level tiers</strong>.
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
-                  • Encourages upgrades via{" "}
-                  <strong>
-                    more postings, notifications, and priority features
-                  </strong>
-                  .
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
-                  • Scales for heavy users (contractors posting multiple sites,
-                  trucks tracking high-traffic events).
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#fff" }}>
-                  • Supports a referral program to{" "}
-                  <strong>grow user base virally</strong>.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+  {/* Why Go Premium Card */}
+  <Grid item xs={12} md={6} display="flex" justifyContent="center">
+    <Card
+      sx={{
+        width: "100%",
+        maxWidth: 500,
+        borderRadius: 3,
+        boxShadow: 4,
+        p: 3,
+        backgroundColor: "secondary.main",
+      }}
+    >
+      <CardContent>
+        <Typography
+          variant="h6"
+          fontWeight={700}
+          sx={{ color: "#fff" }}
+          gutterBottom
+        >
+          Why Go Premium?
+        </Typography>
+        <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
+          • Stay informed – Never miss a high-traffic location or job site.
+        </Typography>
+        <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
+          • Reach faster – Contact laborers, trucks, or contractors instantly.
+        </Typography>
+        <Typography variant="body2" sx={{ color: "#fff", mb: 1 }}>
+          • Analytics & Insights – Optimize routes and postings for maximum
+          efficiency.
+        </Typography>
+        <Typography variant="body2" sx={{ color: "#fff" }}>
+          • Fair & Transparent – Everyone gets visibility and equal opportunity.
+        </Typography>
+      </CardContent>
+    </Card>
+  </Grid>
+</Grid>
+
+
       </Container>
-      <Premium />
+   <Box
+         sx={{
+           textAlign: "center",
+           mt: { xs: 3, md: 4 },
+           py: 2,
+           borderTop: "1px solid #eee",
+         }}
+       >
+         <Typography
+           variant="body2"
+           sx={{
+             color: "text.secondary",
+             fontSize: { xs: "13px", md: "14px" },
+           }}
+         >
+           © 2025 Lobor Dia. All rights reserved.
+         </Typography>
+       </Box>
+
+
+
     </Box>
-    
   );
 };
 
-export default Referrals;
+export default Premium;

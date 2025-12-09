@@ -49,10 +49,10 @@ const Contact = () => {
   return (
     <Box
       sx={{
-        background: theme.palette.primary.dark,
-        minHeight: "100%",
-        py: { xs: 8, md: 10 },
-        mt: { xs: 8, md: 12 },
+        minHeight: "100vh",
+        pt: { xs: 12, md: 14 }, // pushes content down below navbar
+        py: { xs: 8, md: 12 },
+        mr: { md: 70 },
       }}
     >
       <Container maxWidth="md">
@@ -84,7 +84,7 @@ const Contact = () => {
               sx={{
                 p: { xs: 3, md: 4 },
                 borderRadius: "16px",
-                backgroundColor:  theme.palette.primary.main,
+                backgroundColor: theme.palette.primary.main,
               }}
             >
               <Typography
@@ -98,11 +98,31 @@ const Contact = () => {
               <form ref={form} onSubmit={sendEmail}>
                 <TextField
                   fullWidth
-                  name="from_name" 
+                  name="from_name"
                   label="Full Name"
                   variant="outlined"
                   margin="normal"
                   required
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                      },
+                      "&:hover fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                        borderWidth: "2px",
+                      },
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: theme.palette.secondary.main,
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: theme.palette.secondary.main,
+                    },
+                  }}
                 />
                 <TextField
                   fullWidth
@@ -112,6 +132,26 @@ const Contact = () => {
                   variant="outlined"
                   margin="normal"
                   required
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                      },
+                      "&:hover fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                        borderWidth: "2px",
+                      },
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: theme.palette.secondary.main,
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: theme.palette.secondary.main,
+                    },
+                  }}
                 />
                 <TextField
                   fullWidth
@@ -122,11 +162,30 @@ const Contact = () => {
                   variant="outlined"
                   margin="normal"
                   required
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                      },
+                      "&:hover fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: theme.palette.secondary.main,
+                        borderWidth: "2px",
+                      },
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: theme.palette.secondary.main,
+                    },
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: theme.palette.secondary.main,
+                    },
+                  }}
                 />
 
                 <Button
                   variant="contained"
-                  
                   size="large"
                   fullWidth
                   type="submit"
@@ -135,7 +194,7 @@ const Contact = () => {
                     textTransform: "none",
                     borderRadius: "8px",
                     fontWeight: 600,
-                    color:theme.palette.primary.main ,
+                    color: theme.palette.primary.main,
                     background: theme.palette.secondary.main,
                   }}
                 >
@@ -172,7 +231,7 @@ const Contact = () => {
                 variant="h6"
                 fontWeight={600}
                 gutterBottom
-                sx={{ color:theme.palette.secondary.main }}
+                sx={{ color: theme.palette.secondary.main }}
               >
                 Contact Information
               </Typography>
