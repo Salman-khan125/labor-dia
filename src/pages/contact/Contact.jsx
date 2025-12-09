@@ -21,7 +21,7 @@ const Contact = () => {
 
   // YOUR KEYS
   const SERVICE_ID = "service_awn9ilp";
-  const TEMPLATE_ID = "template_wtzyndq";
+  const TEMPLATE_ID = "template_m2va7vp";
   const PUBLIC_KEY = "3GVgyBMhNblwlVIQ5";
   // REMOVED PRIVATE_KEY - Do not use it here!
 
