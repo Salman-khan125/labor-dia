@@ -25,7 +25,12 @@ const WeOffer = () => {
       <Typography
         variant="h4"
         color="text.primary"
-        sx={{ fontWeight: 700, mb: 5 }}
+          sx={{
+              fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.8rem" },
+              fontWeight: 700,
+              mb: 4,
+              lineHeight: 1.2,
+            }}
       >
         How Job Site Route Works
       </Typography>
