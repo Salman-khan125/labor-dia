@@ -17,7 +17,7 @@ import PaidIcon from "@mui/icons-material/Paid";
 
 const premiumData = [
   {
-    title: "Food Trucks",
+    title: "Loborer",
     icon: <EmojiTransportationIcon sx={{ fontSize: 36, color: "#fff" }} />,
     description:
       "Stay ahead of the crowd and hit the best locations with real-time alerts and analytics.",
@@ -91,40 +91,7 @@ const premiumData = [
       },
     ],
   },
-  {
-    title: "Civilians / Foodies",
-    icon: <FastfoodIcon sx={{ fontSize: 36, color: "#fff" }} />,
-    description:
-      "Track trucks and events, never miss your favorite stops or local food festivals.",
-    tiers: [
-      {
-        tier: "Free",
-        price: "$0",
-        features: "View nearby trucks/sites, 1 notification/day.",
-        icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-      {
-        tier: "$5/month",
-        price: "$5",
-        features: "5 notifications/day, basic route info.",
-        icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-      {
-        tier: "$10/month",
-        price: "$10",
-        features:
-          "15 notifications/day, favorite trucks/sites, route suggestions.",
-        icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-      {
-        tier: "$20/month",
-        price: "$20",
-        features:
-          "Unlimited notifications, detailed analytics on routes & popular spots.",
-        icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-    ],
-  },
+ 
 ];
 
 const Premium = () => {
@@ -137,7 +104,7 @@ const Premium = () => {
           align="center"
           sx={{ mb: 6, color: "secondary.main" }}
         >
-          Job Site Route Premium Memberships
+          Lobor Dia Premium Memberships
         </Typography>
 
         <Typography

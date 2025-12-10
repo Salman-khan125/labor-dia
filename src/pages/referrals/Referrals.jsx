@@ -18,7 +18,7 @@ import Premium   from "./premium/Premium";
 
 const pricingData = [
   {
-    title: "Food Trucks",
+    title: "Laborer",
     icon: <EmojiTransportationIcon sx={{ fontSize: 36, color: "#fff" }} />,
     description:
       "Food trucks need real-time alerts for job sites and high-traffic locations.",
@@ -96,42 +96,7 @@ const pricingData = [
       },
     ],
   },
-  {
-    title: "Civilians / Foodies",
-    icon: <FastfoodIcon sx={{ fontSize: 36, color: "#fff" }} />,
-    description:
-      "Civilians may want to track food trucks or job sites for events, street fairs, or deliveries.",
-    tiers: [
-      {
-        tier: "Free",
-        price: "$0",
-        features:
-          "View nearby trucks/sites, basic notifications (1/day). No food ordering (pre-orders).",
-        icon: <CheckCircleOutlineIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-      {
-        tier: "$5/month",
-        price: "$5",
-        features:
-          "Receive 5 notifications/day, basic route info. Can order 1 meal per week.",
-        icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-      {
-        tier: "$10/month",
-        price: "$10",
-        features:
-          "15 notifications/day, route suggestions, ability to favorite trucks/sites. Can order 1 meal per day.",
-        icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-      {
-        tier: "$20/month",
-        price: "$20",
-        features:
-          "Unlimited notifications, detailed analytics on routes & popular trucks/sites. Unlimited food ordering & catering from trucks.",
-        icon: <PaidIcon sx={{ fontSize: 20, color: "#fff" }} />,
-      },
-    ],
-  },
+
 ];
 
 const Referrals = () => {

@@ -136,13 +136,13 @@ const HeroSection = () => {
             >
               <Box
                 component="img"
-                src="/assets/hero/appstore.png"
+                 src="/assets/hero/playstore.png"
                 alt="QR Code"
                 sx={{ height: 90, width: 90 }}
               />
               <Box
                 component="img"
-                src="/assets/hero/playstore.png"
+               src="/assets/hero/appstore.png"
                 alt="QR Code"
                 sx={{
                   height: 90,
