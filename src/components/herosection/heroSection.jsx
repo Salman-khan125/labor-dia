@@ -69,6 +69,13 @@ const HeroSection = () => {
                 component="img"
                 src="/assets/hero/google.png"
                 alt="Google Play"
+                  onClick={() =>
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=com.labor.dia.app",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
                 sx={{
                   height: 60,
                   width: "auto",
@@ -91,6 +98,13 @@ const HeroSection = () => {
                 component="img"
                 src="/assets/hero/app.png"
                 alt="App Store"
+                 onClick={() =>
+                  window.open(
+                    "https://apps.apple.com/pk/app/labor-dia/id6743175552",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )  }
+              
                 sx={{
                   height: 60,
                   width: "auto",
